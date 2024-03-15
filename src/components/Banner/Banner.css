@@ -1,0 +1,6 @@
+.banner-img{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background: linear-gradient(0deg, rgba(21, 11, 43, 0.90) 0%, rgba(21, 11, 43, 0.00) 100%), url('../../assets/images/banner.png') lightgray 0px -18.896px / 100% 123.31% no-repeat;
+}
+
