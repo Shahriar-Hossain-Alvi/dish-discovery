@@ -3,6 +3,7 @@ import Banner from './components/Banner/Banner'
 import Header from './components/Header/Header'
 import RecipeHead from './components/RecipeHead/RecipeHead'
 import Recipes from './components/Recipes/Recipes'
+import Sidebar from './components/Sidebar/Sidebar'
 
 function App() {
 
@@ -10,8 +11,13 @@ function App() {
     <>
       <Header></Header>
       <Banner></Banner>
-      <RecipeHead></RecipeHead>
-      <Recipes></Recipes>
+      <section>
+        <RecipeHead></RecipeHead>
+        <div className='flex gap-6 container mx-auto'>
+          <Recipes></Recipes>
+          <Sidebar></Sidebar>
+        </div>
+      </section>
     </>
   )
 }
