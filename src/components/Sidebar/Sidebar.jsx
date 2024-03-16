@@ -36,8 +36,8 @@ const Sidebar = ({ wantToCook }) => {
                                     <tr key={index}>
                                         <th>{index + 1}</th>
                                         <td>{food.recipe_name}</td>
-                                        <td>{food.preparing_time}</td>
-                                        <td>{food.calories}</td>
+                                        <td>{food.preparing_time} min</td>
+                                        <td>{food.calories} calories</td>
                                         <td><button className="btn rounded-full btn-sm md:btn-md lg:btn-md bg-[#0BE58A] text-[#150B2B] font-medium lexend hover:text-[#0BE58A] hover:bg-[#150B2B]">Preparing</button></td>
                                     </tr>
                                 ))

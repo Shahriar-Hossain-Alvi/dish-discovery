@@ -22,7 +22,7 @@ const Recipe = ({ recipe, handleCookButton}) => {
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                     </svg>
-                    {preparing_time}
+                    <span>{preparing_time} min</span>
                 </span>
                 <span className='flex gap-2 fira-sans text-[#282828CC] text-base'>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -30,7 +30,7 @@ const Recipe = ({ recipe, handleCookButton}) => {
                         <path strokeLinecap="round" strokeLinejoin="round" d="M12 18a3.75 3.75 0 0 0 .495-7.468 5.99 5.99 0 0 0-1.925 3.547 5.975 5.975 0 0 1-2.133-1.001A3.75 3.75 0 0 0 12 18Z" />
                     </svg>
 
-                    {calories}
+                    <span>{calories} calories</span>
                 </span>
             </div>
             <button  onClick={()=>handleCookButton(recipe)} className='btn bg-[#0BE58A] rounded-full btn-lg text-[#150B2B] lexend text-lg font-medium hover:text-[#0BE58A] hover:bg-[#150B2B]'>Want to Cook</button>
