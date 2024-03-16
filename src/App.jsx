@@ -9,16 +9,19 @@ import Sidebar from './components/Sidebar/Sidebar'
 function App() {
   const [wantToCook, setWantToCook] = useState([]);
 
-  const handleCookButton = (recipe)=>{
+  const handleCookButton = (recipe) => {
     const isExist = wantToCook.find(item => recipe.recipe_id === item.recipe_id);
-    if(!isExist){
+    if (!isExist) {
       setWantToCook([...wantToCook, recipe]);
     }
-    else{
-      alert('Already added!');
+    else {
+      const toastContainer = document.getElementById('toast-container');
+      toastContainer.classList.remove('hidden');
+      setTimeout(() => {
+        toastContainer.classList.add('hidden');
+      }, 2000)
     }
   }
-  console.log('Want to cook this dish!', wantToCook);
 
   return (
     <>
@@ -28,7 +31,7 @@ function App() {
         <RecipeHead></RecipeHead>
         <div className='flex gap-6 container mx-auto'>
           <Recipes handleCookButton={handleCookButton}></Recipes>
-          <Sidebar></Sidebar>
+          <Sidebar wantToCook={wantToCook}></Sidebar>
         </div>
       </section>
     </>
