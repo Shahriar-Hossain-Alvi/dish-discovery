@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import '../../index.css'
 
-const Recipe = ({ recipe }) => {
+const Recipe = ({ recipe, handleCookButton }) => {
 
     const { recipe_image, recipe_name, short_description, ingredients, preparing_time, calories } = recipe;
 
@@ -33,14 +33,14 @@ const Recipe = ({ recipe }) => {
                     {calories}
                 </span>
             </div>
-            <button className='btn bg-[#0BE58A] rounded-full btn-lg text-[#150B2B] lexend text-lg font-medium hover:text-[#0BE58A] hover:bg-[#150B2B]'>Want to Cook</button>
+            <button onClick={()=>handleCookButton(recipe)} className='btn bg-[#0BE58A] rounded-full btn-lg text-[#150B2B] lexend text-lg font-medium hover:text-[#0BE58A] hover:bg-[#150B2B]'>Want to Cook</button>
         </div>
     );
 };
 
 Recipe.propTypes = {
     recipe: PropTypes.object.isRequired,
-    ingredients: PropTypes.array.isRequired
+    handleCookButton: PropTypes.func.isRequired,
 };
 
 export default Recipe;

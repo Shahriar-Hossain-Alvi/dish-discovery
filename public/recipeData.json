@@ -4,7 +4,7 @@
       "recipe_name": "Chicken Stir-Fry",
       "recipe_image": "https://i.ibb.co/S6Q7mwb/Chicken-Stir-Fry.jpg",
       "short_description": "A quick and delicious chicken stir-fry with fresh vegetables.",
-      "ingredients": ["550 g chicken breast", "120 ml soy sauce", "200 g basil leaves", "400 g mushrooms", "2 cloves garlic, minced", "1 onion, sliced"],
+      "ingredients": ["550 g chicken breast", "120 ml soy sauce", "200 g basil leaves", "400 g mushrooms", "2 cloves garlic, minced", "1 onion, sliced", "100 g bamboo shoots"],
       "preparing_time": "30 min",
       "calories": "320 calories"
     },
@@ -13,7 +13,7 @@
       "recipe_name": "Vegetable Curry",
       "recipe_image": "https://i.ibb.co/Rz5TGkJ/Vegitable-curry.jpg",
       "short_description": "A flavorful vegetarian curry loaded with assorted vegetables.",
-      "ingredients": ["300 g potatoes, diced", "200 g carrots, sliced", "1 can (400 ml) coconut milk", "250 g green beans, chopped", "2 tbsp curry powder", "1 onion, diced"],
+      "ingredients": ["300 g potatoes, diced", "200 g carrots, sliced", "1 can (400 ml) coconut milk", "250 g green beans, chopped", "2 tbsp curry powder", "1 onion, diced", "150 g cauliflower", "100 g peas"],
       "preparing_time": "45 min",
       "calories": "250 calories"
     },
@@ -22,7 +22,7 @@
       "recipe_name": "Spaghetti Bolognese",
       "recipe_image": "https://i.ibb.co/BndsQVc/spaghetti-bolognese.jpg",
       "short_description": "Classic spaghetti with a rich and savory bolognese sauce.",
-      "ingredients": ["400 g spaghetti", "500 g ground beef", "1 can (400 g) diced tomatoes", "2 cloves garlic, minced", "1 onion, chopped", "2 tbsp olive oil"],
+      "ingredients": ["400 g spaghetti", "500 g ground beef", "1 can (400 g) diced tomatoes", "2 cloves garlic, minced", "1 onion, chopped", "2 tbsp olive oil", "100 g grated Parmesan cheese", "1/2 cup red wine", "1 tsp dried oregano"],
       "preparing_time": "40 min",
       "calories": "380 calories"
     },
@@ -40,7 +40,7 @@
       "recipe_name": "Mushroom Risotto",
       "recipe_image": "https://i.ibb.co/DW9LbTy/Mushroom-Risotto.jpg",
       "short_description": "Creamy and comforting risotto with earthy mushrooms.",
-      "ingredients": ["300 g Arborio rice", "200 g mushrooms, sliced", "1 liter vegetable broth", "1 onion, diced", "2 cloves garlic, minced", "1/2 cup grated Parmesan cheese"],
+      "ingredients": ["300 g Arborio rice", "200 g mushrooms, sliced", "1 liter vegetable broth", "1 onion, diced", "2 cloves garlic, minced", "1/2 cup grated Parmesan cheese", "100 ml white wine", "2 tbsp butter", "1 tsp thyme leaves", "Salt and pepper to taste"],
       "preparing_time": "35 min",
       "calories": "350 calories"
     },
@@ -49,7 +49,7 @@
       "recipe_name": "Greek Salad",
       "recipe_image": "https://i.ibb.co/Y7SqR4M/greek-salad.jpg",
       "short_description": "A refreshing salad with crisp vegetables and tangy feta cheese.",
-      "ingredients": ["2 large tomatoes, chopped", "1 cucumber, diced", "1 red onion, thinly sliced", "200 g feta cheese, crumbled", "100 g Kalamata olives", "2 tbsp olive oil"],
+      "ingredients": ["2 large tomatoes, chopped", "1 cucumber, diced", "1 red onion, thinly sliced", "200 g feta cheese, crumbled", "100 g Kalamata olives", "2 tbsp olive oil", "50 g red bell pepper", "50 g green bell pepper"],
       "preparing_time": "15 min",
       "calories": "180 calories"
     }
