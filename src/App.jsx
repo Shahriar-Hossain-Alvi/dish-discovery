@@ -31,7 +31,7 @@ function App() {
         <RecipeHead></RecipeHead>
         <div className='flex flex-col lg:flex-row gap-6 container mx-auto'>
           <Recipes handleCookButton={handleCookButton}></Recipes>
-          <Sidebar wantToCook={wantToCook}></Sidebar>
+          <Sidebar setWantToCook={setWantToCook} wantToCook={wantToCook}></Sidebar>
         </div>
       </section>
     </>

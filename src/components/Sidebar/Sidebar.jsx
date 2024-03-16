@@ -1,6 +1,27 @@
 import PropTypes from 'prop-types';
+import { useState } from 'react';
 
-const Sidebar = ({ wantToCook }) => {
+const Sidebar = ({ wantToCook, setWantToCook }) => {
+
+    const [prepFood, setPrepFood] = useState([]);
+    const [times, setTimes] = useState([]);
+
+    const handlePrepButton = (food) => {
+        
+        //remove item from want to cook table
+        const newWantToCook = wantToCook.filter(item => item.recipe_id !== food.recipe_id);
+        setWantToCook(newWantToCook);
+
+        //add item to currently cooking table
+        const isExist = prepFood.find(item => food.recipe_id === item.recipe_id);
+        const prepTime = parseInt( food.preparing_time);
+        if (!isExist) {
+            setPrepFood([...prepFood, food]);
+        }
+        setTimes([...times, prepTime]);
+
+    }
+
     return (
         <div className="border w-full lg:w-2/5 border-[#28282833] pt-8 lg:rounded-2xl pb-24">
             {/* want to cook table */}
@@ -36,9 +57,9 @@ const Sidebar = ({ wantToCook }) => {
                                     <tr key={index}>
                                         <th>{index + 1}</th>
                                         <td>{food.recipe_name}</td>
-                                        <td>{food.preparing_time} min</td>
+                                        <td>{food.preparing_time} minutes</td>
                                         <td>{food.calories} calories</td>
-                                        <td><button className="btn rounded-full btn-sm md:btn-md lg:btn-md bg-[#0BE58A] text-[#150B2B] font-medium lexend hover:text-[#0BE58A] hover:bg-[#150B2B]">Preparing</button></td>
+                                        <td><button onClick={() => handlePrepButton(food)} className="btn rounded-full btn-sm md:btn-md lg:btn-md bg-[#0BE58A] text-[#150B2B] font-medium lexend hover:text-[#0BE58A] hover:bg-[#150B2B]">Preparing</button></td>
                                     </tr>
                                 ))
                             }
@@ -50,7 +71,7 @@ const Sidebar = ({ wantToCook }) => {
 
             {/* currently cooking table */}
             <div className="mb-8">
-                <h3 className="text-2xl font-semibold text-[#282828] lexend text-center pb-4">Currently cooking: 02</h3>
+                <h3 className="text-2xl font-semibold text-[#282828] lexend text-center pb-4">Currently cooking: {prepFood.length}</h3>
                 <hr className="w-2/3 mx-auto mb-6" />
                 <div className="overflow-x-auto">
                     <table className="table table-sm lg:table-md md:table-lg">
@@ -64,12 +85,16 @@ const Sidebar = ({ wantToCook }) => {
                             </tr>
                         </thead>
                         <tbody className="fira-sans text-[#282828B2]">
-                            <tr>
-                                <th>1</th>
-                                <td>Cy Ganderton</td>
-                                <td>Quality Control Specialist</td>
-                                <td>Blue</td>
-                            </tr>
+                            {
+                                prepFood.map((cooking, index) => (
+                                    <tr id='wantToCookRow' key={index}>
+                                        <th>{index + 1}</th>
+                                        <td>{cooking.recipe_name}</td>
+                                        <td>{cooking.preparing_time} minutes</td>
+                                        <td>{cooking.calories} calories</td>
+                                    </tr>
+                                ))
+                            }
                         </tbody>
                     </table>
                 </div>
@@ -85,7 +110,11 @@ const Sidebar = ({ wantToCook }) => {
                                 <th className="opacity-0">1</th>
                                 <td className="opacity-0">something here</td>
                                 <td>Total Time =
-                                    45 minutes</td>
+                                    {
+                                        times.reduce((sum, time)=>
+                                            sum + time, 0
+                                        )
+                                    } minutes</td>
                                 <td>Total Calories =
                                     1050 calories</td>
                             </tr>
@@ -98,7 +127,8 @@ const Sidebar = ({ wantToCook }) => {
 };
 
 Sidebar.propTypes = {
-    wantToCook: PropTypes.object.isRequired,
+    wantToCook: PropTypes.array.isRequired,
+    setWantToCook: PropTypes.func.isRequired
 };
 
 export default Sidebar;
