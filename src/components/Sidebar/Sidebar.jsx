@@ -2,18 +2,23 @@ import PropTypes from 'prop-types';
 
 const Sidebar = ({ wantToCook }) => {
     return (
-        <div className="border border-[#28282833] pt-8 pb-24">
+        <div className="border w-full lg:w-2/5 border-[#28282833] pt-8 lg:rounded-2xl pb-24">
             {/* want to cook table */}
             <div className="mb-8">
+                {/* TOAST start */}
                 <div id='toast-container' className="toast toast-top toast-end z-30 hidden">
-                    <div className="alert alert-info bg-error">
-                        <span className='text-white'>Already Added</span>
+                    <div className="alert alert-info bg-[#150B2B]">
+                        <span className='text-[#0BE58A] text-sm md:text-base lg:text-xl font-semibold lexend'>You have already added this dish!</span>
                     </div>
                 </div>
+                {/* TOAST end */}
+
                 <h3 className="text-2xl font-semibold text-[#282828] lexend text-center pb-4">Want to cook: {wantToCook.length}</h3>
+
                 <hr className="w-2/3 mx-auto mb-6" />
+
                 <div className="overflow-x-auto">
-                    <table className="table">
+                    <table className="table table-sm md:table-lg lg:table-md">
                         {/* head */}
                         <thead className="text-[#878787] font-medium fira-sans">
                             <tr>
@@ -24,6 +29,7 @@ const Sidebar = ({ wantToCook }) => {
                                 <th></th>
                             </tr>
                         </thead>
+                        {/* body */}
                         <tbody className="fira-sans text-[#282828B2]">
                             {
                                 wantToCook.map((food, index) => (
@@ -32,7 +38,7 @@ const Sidebar = ({ wantToCook }) => {
                                         <td>{food.recipe_name}</td>
                                         <td>{food.preparing_time}</td>
                                         <td>{food.calories}</td>
-                                        <td><button className="btn rounded-full bg-[#0BE58A] text-[#150B2B] font-medium lexend hover:text-[#0BE58A] hover:bg-[#150B2B]">Preparing</button></td>
+                                        <td><button className="btn rounded-full btn-sm md:btn-md lg:btn-md bg-[#0BE58A] text-[#150B2B] font-medium lexend hover:text-[#0BE58A] hover:bg-[#150B2B]">Preparing</button></td>
                                     </tr>
                                 ))
                             }
@@ -47,7 +53,7 @@ const Sidebar = ({ wantToCook }) => {
                 <h3 className="text-2xl font-semibold text-[#282828] lexend text-center pb-4">Currently cooking: 02</h3>
                 <hr className="w-2/3 mx-auto mb-6" />
                 <div className="overflow-x-auto">
-                    <table className="table">
+                    <table className="table table-sm lg:table-md md:table-lg">
                         {/* head */}
                         <thead className="text-[#878787] font-medium fira-sans">
                             <tr>
@@ -73,7 +79,7 @@ const Sidebar = ({ wantToCook }) => {
             {/* time and calory calculation table */}
             <div className="mb-8">
                 <div className="overflow-x-auto">
-                    <table className="table table-lg">
+                    <table className="table table-sm lg:table-md md:table-lg">
                         <tbody className="fira-sans text-[#282828B2]">
                             <tr>
                                 <th className="opacity-0">1</th>

@@ -27,9 +27,9 @@ function App() {
     <>
       <Header></Header>
       <Banner></Banner>
-      <section>
+      <section className='mb-10 lg:mb-24'>
         <RecipeHead></RecipeHead>
-        <div className='flex gap-6 container mx-auto'>
+        <div className='flex flex-col lg:flex-row gap-6 container mx-auto'>
           <Recipes handleCookButton={handleCookButton}></Recipes>
           <Sidebar wantToCook={wantToCook}></Sidebar>
         </div>
