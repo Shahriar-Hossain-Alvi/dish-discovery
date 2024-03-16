@@ -5,6 +5,7 @@ const Sidebar = ({ wantToCook, setWantToCook }) => {
 
     const [prepFood, setPrepFood] = useState([]);
     const [times, setTimes] = useState([]);
+    const [calories, setCalories] = useState([]);
 
     const handlePrepButton = (food) => {
         
@@ -14,11 +15,15 @@ const Sidebar = ({ wantToCook, setWantToCook }) => {
 
         //add item to currently cooking table
         const isExist = prepFood.find(item => food.recipe_id === item.recipe_id);
-        const prepTime = parseInt( food.preparing_time);
+
+        const totalPrepTime = parseInt( food.preparing_time);
+
+        const totalCalories = parseInt( food.calories);
         if (!isExist) {
             setPrepFood([...prepFood, food]);
         }
-        setTimes([...times, prepTime]);
+        setTimes([...times, totalPrepTime]);
+        setCalories([...calories, totalCalories]);
 
     }
 
@@ -109,14 +114,16 @@ const Sidebar = ({ wantToCook, setWantToCook }) => {
                             <tr>
                                 <th className="opacity-0">1</th>
                                 <td className="opacity-0">something here</td>
-                                <td>Total Time =
-                                    {
+                                <td>Total Time = {
                                         times.reduce((sum, time)=>
                                             sum + time, 0
                                         )
-                                    } minutes</td>
-                                <td>Total Calories =
-                                    1050 calories</td>
+                                    }<span> minutes</span></td>
+                                <td>Total Calories ={
+                                        calories.reduce((sum, calories)=>
+                                            sum + calories, 0
+                                        )
+                                    }<span>calories</span></td>
                             </tr>
                         </tbody>
                     </table>
